@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- DADOS MOCKADOS
+Nome : Ana Beatriz da Silva
+CPF : 881.897.700-80
+Data Nascimento : 05/04/2016
+Telefone : 11 982357954
+E-mail : ana.beatriz@hotmail.com
+-->
+
+<!-- PALETA DE CORES
+| Cor         | Hex       | Uso principal               |
+| ----------- | --------- | --------------------------- |
+| Azul escuro | `#003f87` | Cabeçalho / menu superior   |
+| Azul médio  | `#00a2e1` | Ícones, linhas, bordas      |
+| Branco      | `#ffffff` | Fundo principal, texto      |
+| Cinza claro | `#f5f5f5` | Fundo secundário (conteúdo) |
+| Laranja     | `#e68627` | Botões de chamada           |
+-->
+
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8" />
 
@@ -34,7 +52,7 @@
 		.border-bottom,
 		.border-top,
 		.border-end {
-			border-color: #00a2e1 !important;
+			/* border-color: #00a2e1 !important; */
 		}
 
 		/* Fundo principal */
@@ -46,6 +64,19 @@
 		.card.text-bg-light,
 		.list-group-item {
 			background-color: #f5f5f5 !important;
+		}
+
+		#img_btnCopia {
+			width: 20px;
+			/* largura reduzida */
+			height: 20px;
+			/* altura reduzida */
+			cursor: pointer;
+			/* cursor de mãozinha para indicar clique */
+			margin-left: 5px;
+			/* espaçamento do texto */
+			vertical-align: middle;
+			/* alinha verticalmente com o texto */
 		}
 	</style>
 </head>
@@ -60,11 +91,24 @@
 					<h5>INFORMAÇÕES DO PACIENTE</h5>
 				</div>
 				<div class="card-body">
-					<p><strong>Nome : </strong><span>ARTHUR HARDMAN BORGES</span></p>
-					<p><strong>CPF : </strong><span>40344751880</span></p>
-					<p><strong>Data Nascimento : </strong><span>03-02-1991</span></p>
-					<p><strong>Telefone : </strong><span>11981032927</span></p>
-					<p><strong>E-mail : </strong><span>arthur@hardman.com.br</span></p>
+					<p class="mb-1"><strong>Nome: </strong><span id="nameText">Ana Beatriz da Silva</span> <img
+							id="img_btnCopia" src="img_btnCopia.png" alt="Copiar"
+							onclick="copiarTexto('nameText', this)"></p>
+
+					<p class="mb-1"><strong>CPF: </strong><span id="cpfText">881.897.700-80</span><img id="img_btnCopia"
+							src="img_btnCopia.png" alt="Copiar" onclick="copiarTexto('cpfText', this)"></p>
+
+					<p class="mb-1"><strong>Data Nascimento: </strong><span id="birthDateText">05/04/2016</span><img
+							id="img_btnCopia" src="img_btnCopia.png" alt="Copiar"
+							onclick="copiarTexto('birthDateText', this)"></p>
+
+					<p class="mb-1"><strong>Telefone: </strong><span id="phoneText">11 982357954</span><img
+							id="img_btnCopia" src="img_btnCopia.png" alt="Copiar"
+							onclick="copiarTexto('phoneText', this)"></p>
+
+					<p class="mb-1"><strong>E-mail: </strong><span id="emailText">ana.beatriz@hotmail.com</span><img
+							id="img_btnCopia" src="img_btnCopia.png" alt="Copiar"
+							onclick="copiarTexto('emailText', this)"></p>
 				</div>
 			</div>
 		</div>
@@ -81,9 +125,14 @@
 								<h5>Informações do Convênio</h5>
 							</div>
 							<div class="card-body">
-								<p class="mb-1">SULAMERICA FUNCIONARIOS</p>
-								<p class="mb-1">596 FUNC SP I EMPRESARIAL ENFERMARIA</p>
-								<p class="mb-0">59601712004280830013</p>
+								<p class="mb-1"><strong>Convênio: </strong><span id="convenio1">SULAMERICA FUNCIONARIOS</span><img id="img_btnCopia" src="img_btnCopia.png" alt="Copiar"
+										onclick="copiarTexto('convenio1', this)"></p>
+								<p class="mb-1"><strong>Plano: </strong><span id="plano1">596 FUNC SP I EMPRESARIAL ENFERMARIA</span><img id="img_btnCopia" src="img_btnCopia.png" alt="Copiar"
+										onclick="copiarTexto('plano1', this)"></p>
+								<p class="mb-0"><strong>Carteirinha: </strong><span
+										id="carteirinha1">59601712004280830013</span><img id="img_btnCopia"
+										src="img_btnCopia.png" alt="Copiar" onclick="copiarTexto('carteirinha1', this)">
+								</p>
 							</div>
 						</div>
 					</div>
@@ -95,9 +144,14 @@
 								<h5>Informações do Convênio</h5>
 							</div>
 							<div class="card-body">
-								<p class="mb-1">SULAMERICA FUNCIONARIOS</p>
-								<p class="mb-1">555 EXP 90 S FUNC ENFERMARIA</p>
-								<p class="mb-0">55501570004280830012</p>
+								<p class="mb-1"><strong>Convênio: </strong><span id="convenio2">SULAMERICA FUNCIONARIOS</span><img id="img_btnCopia" src="img_btnCopia.png" alt="Copiar"
+										onclick="copiarTexto('convenio2', this)"></p>
+								<p class="mb-1"><strong>Plano: </strong><span id="plano2">555 EXP 90 S FUNC ENFERMARIA</span><img id="img_btnCopia" src="img_btnCopia.png" alt="Copiar"
+										onclick="copiarTexto('plano2', this)"></p>
+								<p class="mb-0"><strong>Carteirinha: </strong><span
+										id="carteirinha2">55501570004280830012</span><img id="img_btnCopia"
+										src="img_btnCopia.png" alt="Copiar" onclick="copiarTexto('carteirinha2', this)">
+								</p>
 							</div>
 						</div>
 					</div>
@@ -109,9 +163,14 @@
 								<h5>Informações do Convênio</h5>
 							</div>
 							<div class="card-body">
-								<p class="mb-1">SULAMERICA</p>
-								<p class="mb-1">891 CLASSICO III NAC EMPRESARIAL APARTAMENTO</p>
-								<p class="mb-0">89188888013958330015</p>
+								<p class="mb-1"><strong>Convênio: </strong><span id="convenio3">SULAMERICA</span><img id="img_btnCopia" src="img_btnCopia.png" alt="Copiar"
+										onclick="copiarTexto('convenio3', this)"></p>
+								<p class="mb-1"><strong>Plano: </strong><span id="plano3">891 CLASSICO III NAC EMPRESARIAL APARTAMENTO</span><img id="img_btnCopia" src="img_btnCopia.png" alt="Copiar"
+										onclick="copiarTexto('plano3', this)"></p>
+								<p class="mb-0"><strong>Carteirinha: </strong><span
+										id="carteirinha3">89188888013958330015</span><img id="img_btnCopia"
+										src="img_btnCopia.png" alt="Copiar" onclick="copiarTexto('carteirinha3', this)">
+								</p>
 							</div>
 						</div>
 					</div>
@@ -134,7 +193,7 @@
 					<h5>Agendamentos</h5>
 				</div>
 				<div class="card-body p-0">
-					<div class="card-header p-0" style="user-select: text;">
+					<div class="card-body p-0" style="user-select: text;">
 						<!-- Header -->
 						<ul class="list-group list-group-horizontal fw-bold border-bottom rounded-top"
 							style="background-color: transparent;">
@@ -170,7 +229,7 @@
 							<li class="list-group-item flex-fill border-0 border-end"
 								style="width: 10%; background-color: transparent;">002083361639</li>
 							<li class="list-group-item flex-fill border-0 border-end"
-								style="width: 15%; background-color: transparent;">BRASIL SANTO ANDRÉ</li>
+								style="width: 15%; background-color: transparent;">Hospital Barra D'Or</li>
 							<li class="list-group-item flex-fill border-0 border-end"
 								style="width: 16%; background-color: transparent;">ELETROCARDIOGRAMA</li>
 							<li class="list-group-item flex-fill border-0 border-end"
@@ -188,7 +247,7 @@
 							<li class="list-group-item flex-fill border-0 border-end"
 								style="width: 10%; background-color: transparent;">002037111983</li>
 							<li class="list-group-item flex-fill border-0 border-end"
-								style="width: 15%; background-color: transparent;">1185</li>
+								style="width: 15%; background-color: transparent;">BRASIL SANTO ANDRÉ</li>
 							<li class="list-group-item flex-fill border-0 border-end"
 								style="width: 16%; background-color: transparent;">RESSONÂNCIA MAGNÉTICA DE COLUNA
 								COCCIGEA(COCCIX)</li>
@@ -207,7 +266,7 @@
 							<li class="list-group-item flex-fill border-0 border-end"
 								style="width: 10%; background-color: transparent;">002022357396</li>
 							<li class="list-group-item flex-fill border-0 border-end"
-								style="width: 15%; background-color: transparent;">6097</li>
+								style="width: 15%; background-color: transparent;">Hospital Copa D'Or</li>
 							<li class="list-group-item flex-fill border-0 border-end"
 								style="width: 16%; background-color: transparent;">RESSONÂNCIA MAGNÉTICA DE COLUNA
 								COCCIGEA(COCCIX)</li>
@@ -226,7 +285,7 @@
 							<li class="list-group-item flex-fill border-0 border-end"
 								style="width: 10%; background-color: transparent;">001926664128</li>
 							<li class="list-group-item flex-fill border-0 border-end"
-								style="width: 15%; background-color: transparent;">1185</li>
+								style="width: 15%; background-color: transparent;">Hospital Quinta D'Or</li>
 							<li class="list-group-item flex-fill border-0 border-end"
 								style="width: 16%; background-color: transparent;">CONSULTA DE DERMATOLOGIA</li>
 							<li class="list-group-item flex-fill border-0 border-end"
@@ -244,7 +303,7 @@
 							<li class="list-group-item flex-fill border-0 border-end"
 								style="width: 10%; background-color: transparent;">001926662025</li>
 							<li class="list-group-item flex-fill border-0 border-end"
-								style="width: 15%; background-color: transparent;">1185</li>
+								style="width: 15%; background-color: transparent;">Hospital Quinta D'Or</li>
 							<li class="list-group-item flex-fill border-0 border-end"
 								style="width: 16%; background-color: transparent;">ELETROCARDIOGRAMA</li>
 							<li class="list-group-item flex-fill border-0 border-end"
@@ -272,8 +331,21 @@
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-		crossorigin="anonymous"></script>
+		integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+		</script>
+
+	<!--  botação de copiar -->
+	<script>
+		function copiarTexto(elementId, btn) {
+			const texto = document.getElementById(elementId).innerText;
+			navigator.clipboard.writeText(texto).then(function () {
+				btn.innerText = "Copiado!";
+				setTimeout(() => btn.innerText = "Copiar", 2000);
+			}, function (err) {
+				console.error('Erro ao copiar: ', err);
+			});
+		}
+	</script>
 </body>
 
 </html>
